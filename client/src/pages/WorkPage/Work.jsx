@@ -8,8 +8,7 @@ const Work = () => {
   return (
     <div className='work-page'>
         <div className='work-header'>
-          <h1>PORTFOLIO</h1>
-          <p>Select a category to explore the collection</p>
+          <h2>Select a category to explore the collection</h2>
         </div>
 
         <div className='work-grid'>

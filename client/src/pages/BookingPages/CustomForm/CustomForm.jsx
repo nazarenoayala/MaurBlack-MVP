@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import MyButton from '../../../components/MyButton/MyButton';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './customForm.css';
 
 const CustomForm = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -12,6 +15,8 @@ const CustomForm = () => {
     });
     const [file, setFile] = useState(null);
     const [status, setStatus] = useState({type: '', msg: ''});
+    const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const handleChange = (e) =>{
         setFormData({...formData, [e.target.name]: e.target.value});
@@ -23,11 +28,14 @@ const CustomForm = () => {
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        setStatus({type: 'info', msg: 'Enviando solicitud'});
-    
 
+        if(loading) return;
+        setLoading(true);
+        setStatus({type: 'info', msg: 'Enviando solicitud'});
+        
     //Uso FormData para enviar archivos
     const data = new FormData();
+    data.append('appointment_type', 2);
     data.append('name', formData.name);
     data.append('email', formData.email);
     data.append('bodyPart', formData.bodyPart);
@@ -39,9 +47,13 @@ const CustomForm = () => {
         await axios.post('http://localhost:4000/api/booking/custom', data,{
             headers: {'Content-Type': 'multipart/form-data'}
         });
-        setStatus({type: 'success', msg: 'Request sent! Maur will contact you soon'})
+        setShowModal(true);
+
+        setTimeout(() => {
+            navigate('/');
+        }, 3000)
     } catch (error) {
-        console.error("DEBUG ERROR:", error.response?.data || error.message);
+        console.error("ERROR:", error.response?.data || error.message);
     setStatus({ type: 'error', msg: 'Error. Try again' });
         
     }
@@ -80,6 +92,15 @@ const CustomForm = () => {
             onChange={handleChange} required 
             />
         </div>
+        <div className='input-section'>
+            <input 
+            type='text'
+            name='phone' 
+            placeholder='Phone (optional)'
+            className='input-optional' 
+            onChange={handleChange}
+            />
+        </div>
 
     <textarea 
     name='description' 
@@ -95,12 +116,21 @@ const CustomForm = () => {
 
     <MyButton
         type='submit'
-        text='SEND REQUEST'
+        text={loading ? 'SENDING..' : 'SEND REQUEST'}
         className='submit-btn'
+        disabled={loading}
     />
 
-    {status.msg && <div className={`status-msg ${status.type}`}>{status.msg}</div>}
     </form>
+    {showModal && (
+        <div className='modal-cover'>
+            <div className='modal-content'>
+                <h2>REQUEST SENT</h2>
+                <p>Maur will contact you via email soon!</p>
+                <p className='redirect-text'>Redirecting to Home..</p>
+            </div>
+        </div>
+    )}
     </div>
   )
 }

@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
+import { useNavigate } from 'react-router-dom';
 import './home.css';
 
 const Home = () => {
+  const navigate = useNavigate();
   const [works, setWorks] = useState([]);
 
   useEffect(() => {
@@ -18,19 +20,32 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="home-hero">
-      <div className="hero-content">
-        <span className="hero-subtitle">ORNAMENTHAL & BLACKWORK</span>
-        <h1 className="hero-title">MAUR BLACK</h1>
-        <div className="hero-divider"></div>
-        <p className="hero-description">
-          Ornamental
-        </p>
-        <button className="hero-cta">EXPLORAR GALERÍA</button>
+    <main className="home-maur">
+      <div className='video-content'>
+        <video autoPlay
+               muted 
+               loop
+               playsInline
+               className='bg-video'
+        >
+          <source src='/assets/videos-home/MAURO-Y-JORGE.mov' type='video/quicktime'/>
+          <source src='/assets/videos-home/MAURO-Y-JORGE.mov' type='video/mp4'/>
+        </video>
+        <div className='video-cover'></div>
+      </div>
+      <div className="home-content">
+        <span className="home-subtitle">TATTOO & PAINT ARTIST</span>
+        <h1 className="home-title">MAURBLACK</h1>
+        <div className="home-divider"></div>
+        <button 
+          className="home-cta"
+          onClick={() => navigate('/work')}
+          >EXPLORE GALLERY
+          </button>
       </div>
       
       {/* overlay sutil para dar textura al fondo o foto degradada*/}
-      <div className="hero-overlay"></div>
+      <div className="home-cover"></div>
     </main>
   )
 };

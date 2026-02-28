@@ -5,7 +5,7 @@ const mailer = require('../config/mailer');
 const createCustomBooking = async (req, res) =>{
     try {
         //datos de texto (vienen de los appends del front)
-        const { name, email, bodyPart, size, description } = req.body;
+        const { name, email, phone, bodyPart, size, description } = req.body;
         //archivo imagen
         const file = req.file
 
@@ -18,7 +18,7 @@ const createCustomBooking = async (req, res) =>{
             appointment_type: 2, // 2 para Custom
             client_name: name,
             client_email: email,
-            client_phone: phone || '',
+            client_phone: phone ? phone.trim() : '', //si phone no existe, guardo string vacio o null
             flash_id: null,
             custom_description: `Part: ${bodyPart}, Size: ${size}, Idea: ${description}`,
             reference_img_url: file ? file.path : null
