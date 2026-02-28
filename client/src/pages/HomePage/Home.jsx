@@ -28,8 +28,7 @@ const Home = () => {
                playsInline
                className='bg-video'
         >
-          <source src='/assets/videos-home/MAURO-Y-JORGE.mov' type='video/quicktime'/>
-          <source src='/assets/videos-home/MAURO-Y-JORGE.mov' type='video/mp4'/>
+          <source src='https://res.cloudinary.com/ddzvaugox/video/upload/v1772261040/MAURO-Y-JORGE_poyb8c.mp4' type='video/mp4'/>
         </video>
         <div className='video-cover'></div>
       </div>
