@@ -6,7 +6,7 @@
     position: sticky;
     top: 0;
     background-color: #000000;
-    z-index: 1000;
+    z-index: 2000;
     border-bottom: 1px solid #1a1a1a;
 }
 
@@ -23,9 +23,11 @@
     align-items: center;
     gap: 30px;
     width: 100%;
+    z-index: 1999;
 }
 
 .nav-link {
+    font-family: var(--font-body, 'DM Sans', sans-serif);
     color: #888;
     text-decoration: none;
     font-size: 0.9rem;
@@ -42,9 +44,11 @@
     margin-left: auto;
     background-color: #ffffff;
     color: #000000 !important;
-    padding: 10px 24px;
-    border-radius: 2px;
-    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 1px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
     text-decoration: none;
     transition: all 0.3s ease;
     border: 1px solid #ffffff;
@@ -57,9 +61,9 @@
 }
 
 .home-link {
-    font-weight: 800;
-    color: #ffffff !important;
+    font-weight: 500;
     margin-right: 10px;
+    padding-right: 15px;
 }
 
 .nav-link {
@@ -69,4 +73,111 @@
 @keyframes fadeIn {
     from {opacity: 0; transform: translateX(-10ox);}
     to {opacity: 1; transform: translateX(0);}
+}
+
+/* Hamburguesa, escondida en deckspot*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animacion para x cuando abre */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+.navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #000;
+    padding: 40px 32px;
+    border-top: 1px solid #1a1a1a;
+    z-index: 1999;
+}
+
+.navbar-links.menu-open {
+    display: flex;
+}
+
+.nav-link {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.btn-book {
+    font-family: var(--font-title);
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+}
+}
+
+.nav-instagram {
+    color: #888;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    margin-left: auto;
+}
+
+.nav-instagram:hover {
+    color: #fff;
+}
+
+/* remove margin-left auto from btn-book since instagram takes that role now */
+.btn-book {
+    margin-left: 16px;
+}
+
+@media (max-width: 768px) {
+    .nav-instagram {
+        margin-left: 0;
+    }
+
+    .nav-instagram svg {
+        width: 24px;
+        height: 24px;
+    }
 }

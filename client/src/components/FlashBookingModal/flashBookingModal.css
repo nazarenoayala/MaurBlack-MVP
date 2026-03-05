@@ -1,4 +1,4 @@
-.modal-cover {
+.modal-cover-form {
     position: fixed !important;
     top: 0;
     left: 0;
@@ -108,4 +108,66 @@
 
 .close-x-btn:hover {
     color: #ff0000;
+}
+
+/* Modal de confirmacion de envio */
+.modal-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.modal-content-success {
+  background: #ffffff; 
+  padding: 60px 40px;
+  border-radius: 24px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #000;
+}
+
+.success-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.modal-content-success h2 {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.modal-content-success p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.redirect-text {
+  margin-top: 30px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
+  display: block;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }

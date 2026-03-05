@@ -1,0 +1,42 @@
+.loader-wrapper {
+    position: fixed;
+    inset: 0;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-bar {
+    width: 120px;
+    height: 1px;
+    background-color: #222;
+    overflow: hidden;
+}
+
+.loader-fill {
+    height: 100%;
+    background-color: #f0a500;
+    animation: loadSlide 1.2s ease-in-out infinite;
+}
+
+.loader-text {
+    font-size: 0.7rem;
+    letter-spacing: 6px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+@keyframes loadSlide {
+    0%   { width: 0%; margin-left: 0%; }
+    50%  { width: 100%; margin-left: 0%; }
+    100% { width: 0%; margin-left: 100%; }
+}

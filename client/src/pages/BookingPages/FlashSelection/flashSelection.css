@@ -11,15 +11,15 @@
     cursor: pointer;
     background: #1a1a1a;
     border: 1px solid #ddd;
-    border-radius: 12px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid #333;
+    padding: 20px;
 }
 
 .flash-card:hover {
     transform: translateY(-10px);
-    border-color: #fff; /* Se ilumina el borde al pasar el mouse */
+    border-color: #f0a500;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
@@ -33,4 +33,33 @@
 
 .flash-card:hover .flash-img {
     filter: grayscale(0%);
+}
+
+.flash-title {
+    font-family: var(--font-title);
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .flash-selection-container {
+        padding-top: 20px;
+    }
+
+    .flash-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .flash-img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flash-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px;
+    }
 }

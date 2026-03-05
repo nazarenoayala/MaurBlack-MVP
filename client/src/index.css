@@ -1,3 +1,8 @@
+:root {
+    --font-title: 'Black Han Sans', sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +11,7 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   background-color: #000; 
   color: #fff;
   -webkit-font-smoothing: antialiased;
@@ -22,4 +27,8 @@ button {
   border: none;
   cursor: pointer;
   font-family: inherit;
+}
+
+a, ul, li {
+    font-family: var(--font-body);
 }

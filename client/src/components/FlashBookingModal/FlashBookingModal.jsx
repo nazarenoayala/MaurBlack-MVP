@@ -6,6 +6,7 @@ const FlashBookingModal = ({flash, onClose}) => {
     const [formFlash, setFormFlash] = useState({
         name: '',
         email: '',
+        appointment_type: 1,
         bodyPart: '',
         description: ''
     })
@@ -24,7 +25,7 @@ const FlashBookingModal = ({flash, onClose}) => {
         //Objeto con los datos del cliente + los datos del Flash
         const bookingData = {
             ...formFlash,
-            flash_id: flash.flash_title,
+            flash_id: flash.flash_id,
             flash_title: flash.flash_title,
             price: flash.price
         };
@@ -42,7 +43,7 @@ const FlashBookingModal = ({flash, onClose}) => {
         }
     }
   return (
-  <div className='modal-cover' onClick={onClose}>
+  <div className='modal-cover-form' onClick={onClose}>
     <div className='modal-content' onClick={(e) => e.stopPropagation()}>
       <button className='close-x-btn' onClick={onClose}>&times;</button>
 
@@ -104,10 +105,13 @@ const FlashBookingModal = ({flash, onClose}) => {
         </>
       ) : (
         /* Mensaje de exito cuando se envia el form */
-        <div className="success-container">
+        <div className='modal-cover'>
+        <div className="modal-content-success">
           <span className="success-icon">✔️</span>
-          <h2>Request Sent!</h2>
-          <p>Maur will contact you soon via email.</p>
+          <h2>REQUEST SENT!</h2>
+          <p>Maur will contact you via email soon!</p>
+          <p className='redirect-text'>Redirecting to Home..</p>
+          </div>
         </div>
       )}
     </div>

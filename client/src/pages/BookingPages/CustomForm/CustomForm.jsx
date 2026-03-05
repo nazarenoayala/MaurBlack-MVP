@@ -124,7 +124,8 @@ const CustomForm = () => {
     </form>
     {showModal && (
         <div className='modal-cover'>
-            <div className='modal-content'>
+            <div className='modal-content-success'>
+                <span className="success-icon">✔️</span>
                 <h2>REQUEST SENT</h2>
                 <p>Maur will contact you via email soon!</p>
                 <p className='redirect-text'>Redirecting to Home..</p>

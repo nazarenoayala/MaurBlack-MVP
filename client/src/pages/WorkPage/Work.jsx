@@ -7,10 +7,6 @@ const Work = () => {
 
   return (
     <div className='work-page'>
-        <div className='work-header'>
-          <h2>Select a category to explore the collection</h2>
-        </div>
-
         <div className='work-grid'>
           {/* Tattoos (type 1) */}
           <div

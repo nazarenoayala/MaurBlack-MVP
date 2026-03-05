@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import FlashBookingModal from '../../../components/FlashBookingModal/FlashBookingModal';
+import Loader from '../../../components/Loader/Loader';
 import './flashSelection.css';
 
 const FlashSelection = () =>{
@@ -13,7 +14,6 @@ const FlashSelection = () =>{
         const fetchFlashes = async () => {
         try {
             const res = await axios.get('http://localhost:4000/api/flashes');
-            console.log("DATOS LLEGANDO:", res.data);
             setFlashes(res.data);
         } catch (error) {
             console.error("ERROR EN PETICIÓN:", error);
@@ -24,7 +24,7 @@ const FlashSelection = () =>{
     fetchFlashes();
 }, []);
 
-    if(loading) return <p>LOADING DESIGNS</p>;
+    if (loading) return <Loader message="LOADING DESIGNS" />;
 
     const handleOpenModal = (flash) => {
         setSelectedFlash(flash);

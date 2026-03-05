@@ -14,19 +14,7 @@
     box-sizing: border-box;
 }
 
-.header{
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
-    flex-shrink: 0;
-}
 
-.header h2 {
-    color: #666;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-}
 
 .work-grid {
     display: flex;
@@ -75,6 +63,7 @@
 }
 
 .category-cover h2 {
+    font-family: var(--font-title);
     color: white;
     font-size: 2.5rem;
     letter-spacing: 6px;
@@ -95,4 +84,29 @@
 .category-card:hover .gallery-btn {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .work-grid {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .category-cover h2 {
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+    }
+
+    .gallery-btn {
+        font-size: 0.6rem;
+        padding: 8px 16px;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

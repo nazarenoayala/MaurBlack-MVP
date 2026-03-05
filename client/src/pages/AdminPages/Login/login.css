@@ -1,0 +1,99 @@
+.login-wrapper {
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 380px;
+    padding: 48px 40px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #000;
+    text-align: center;
+    margin: 0;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 8px 0 36px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login-field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.login-field input {
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #fafafa;
+}
+
+.login-field input:focus {
+    border-color: #000;
+    background-color: #fff;
+}
+
+.login-error {
+    font-size: 0.85rem;
+    color: #c0392b;
+    text-align: center;
+    margin: 0;
+}
+
+.login-btn {
+    margin-top: 8px;
+    padding: 13px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #222;
+}
+
+.login-btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}

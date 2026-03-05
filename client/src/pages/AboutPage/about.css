@@ -36,6 +36,7 @@
 }
 
 .about-name {
+    font-family: var(--font-title);
     font-size: 3.5rem;
     letter-spacing: 10px;
     margin: 10px 0;
@@ -56,4 +57,41 @@
     margin-bottom: 40px;
     max-width: 450px;
     font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        padding: 120px 24px 60px;
+        align-items: flex-start;
+    }
+
+    .about-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 32px;
+    }
+
+    .about-img {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-img img {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .about-name {
+        font-size: 2.2rem;
+        letter-spacing: 6px;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
 }

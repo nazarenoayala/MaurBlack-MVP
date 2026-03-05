@@ -1,0 +1,126 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 36px 32px;
+    width: 100%;
+    max-width: 440px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0 0 24px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modal-field label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.modal-field input,
+.modal-field select,
+.modal-field textarea {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    outline: none;
+    background-color: #fafafa;
+    transition: border-color 0.2s;
+}
+
+.modal-field input:focus,
+.modal-field select:focus,
+.modal-field textarea:focus {
+    border-color: #000;
+    background-color: #fff;
+}
+
+.modal-field textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.file-name {
+    font-size: 0.78rem;
+    color: #888;
+    margin: 0;
+}
+
+.modal-error {
+    font-size: 0.82rem;
+    color: #c0392b;
+    margin: 0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.modal-btn-cancel {
+    padding: 9px 20px;
+    background: none;
+    border: 1px solid #ccc;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modal-btn-cancel:hover {
+    border-color: #000;
+}
+
+.modal-btn-submit {
+    padding: 9px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-btn-submit:hover {
+    background-color: #333;
+}
+
+.modal-btn-submit:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}

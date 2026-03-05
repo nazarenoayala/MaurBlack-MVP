@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 import './workGallery.css';
 
 const WorkGallery = () => {
@@ -38,7 +39,7 @@ const WorkGallery = () => {
     };
 
     //Manejo de estados de carga
-    if(loading) return <div className='loading'>Loading...</div>;
+    if (loading) return <Loader message="LOADING GALLERY" />;
     if(images.length === 0) return <div className='loading'>No works in this category</div>
 
     //Extraigo la imagen que corresponde a la posicion actual
