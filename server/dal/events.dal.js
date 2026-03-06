@@ -3,16 +3,11 @@ const calendar = require('../config/googleCalendar');
 const getUpcomingEvents = async () => {
     const res = await calendar.events.list({
         calendarId: process.env.GOOGLE_CALENDAR_ID,
-        timeMin: new Date().toISOString(), // only upcoming
+        timeMin: new Date().toISOString(),
         maxResults: 20,
         singleEvents: true,
         orderBy: 'startTime',
     });
-
-    // Temporary debug
-    console.log('CALENDAR ID:', process.env.GOOGLE_CALENDAR_ID);
-    console.log('EVENTS FOUND:', res.data.items.length);
-    console.log('RAW EVENTS:', JSON.stringify(res.data.items, null, 2));
 
     return res.data.items.map(event => ({
         id: event.id,
