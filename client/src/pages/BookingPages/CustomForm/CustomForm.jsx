@@ -109,7 +109,7 @@ const CustomForm = () => {
     </textarea>
 
     <div className='file-input'>
-        <label htmlFor="file-upload">UPLOAD REFERENCE IMAGE</label>
+        <label htmlFor="file-upload">UPLOAD REFERENCE IMAGE (Max file size: 20MB — JPG, PNG, WEBP)</label>
         <input id='file-upload' type="file" onChange={handleFileChange} accept='image/*' />
         {file && <span className='file-name'>{file.name}</span>}
     </div>

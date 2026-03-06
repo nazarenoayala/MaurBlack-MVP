@@ -4,9 +4,9 @@ import './about.css';
 const About = () => {
   return (
   <main className='about-page'>
-    <div className='about-container'>
+    <section className='about-container'>
       <div className='about-img'>
-        {/* <img src="" alt="" RETRATO DE MAU?/> */}
+        {/* <img src="" alt="Maur Black - Tattoo Artist Barcelona" RETRATO DE MAU?/> */}
       </div>
       <div className='about-info'>
         <h1 className='about-name'>MAURBLACK</h1>
@@ -18,7 +18,7 @@ const About = () => {
            ipsum impedit. Eos doloribus maiores quae.
         </p>
       </div>
-    </div>
+    </section>
   </main>
   )
 }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {NavLink, useLocation} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import logo from '../../assets/logomaur.webp'
 import './navbar.css';
 
 const Navbar = () => {
@@ -11,6 +12,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
         <div className='navbar-container'>
+          <img src={logo} alt="Maur Black" className="navbar-logo" />
           {/* muestra home solo cuando no esta en la raiz "/" */}
           {location.pathname !== "/" && (
             <NavLink to="/" className="nav-link home-link" onClick={closeMenu}>Home</NavLink>
@@ -37,7 +39,7 @@ const Navbar = () => {
                       className="nav-instagram"
                       onClick={closeMenu}
                       >
-                    <FontAwesomeIcon icon={faInstagram} fontSize={32} />
+                    <FontAwesomeIcon icon={faInstagram} fontSize={25} />
                     </a>
                     <NavLink to="/book" className="btn-book" onClick={closeMenu}>BOOK</NavLink>
         </ul>

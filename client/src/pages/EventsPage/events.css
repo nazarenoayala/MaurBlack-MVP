@@ -93,6 +93,13 @@
     text-transform: uppercase;
 }
 
+.event-description {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
 @media (max-width: 768px) {
     .events-page {
         position: relative;

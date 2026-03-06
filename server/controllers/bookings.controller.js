@@ -24,6 +24,8 @@ const createCustomBooking = async (req, res) =>{
             reference_img_url: file ? file.path : null
         }
 
+        await appointmentsDAL.createAppointment(dbData);
+
         //configuracion correo para Maur
         const adminMailOptions = {
             from: process.env.EMAIL_USER,
@@ -78,7 +80,7 @@ const createCustomBooking = async (req, res) =>{
 
 const createFlashBooking = async (req, res) =>{
     try {
-        const {name, email, bodyPart, description, flash_title, price} = req.body;
+        const {name, email, phone, bodyPart, description, flash_title, price, flash_id} = req.body;
 
         if(!name || !email) {
             return res.status(400).json({message: 'Name and Email mandatory'})
@@ -90,7 +92,7 @@ const createFlashBooking = async (req, res) =>{
             client_name: name,
             client_email: email,
             client_phone: phone || '',
-            flash_id: flash_id,
+            flash_id: Number(flash_id),
             custom_description: `Part: ${bodyPart}, Info: ${description}`,
             reference_img_url: null
         };

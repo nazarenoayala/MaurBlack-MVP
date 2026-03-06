@@ -1,36 +1,37 @@
 const multer = require('multer');
-const path = require('path');
-const { all } = require('../routes/works.routes');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
-//Donde y como se guardan los archivos
-const storage = multer.diskStorage({
-    destination: (req, file, cb) =>{
-        cb(null, 'uploads/');
-    },
-    filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, uniqueSuffix + path.extname(file.originalname));
+// Cloudinary config usando variables ya existentes en .env
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// Files van directo a cloudinary en vez de al disco local
+const storage = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: 'maurblack', // folder name in your Cloudinary account
+        allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
+        transformation: [{ width: 600, height: 800, crop: 'fill', gravity: 'center' }]
     }
 });
 
-//Filtro de archivos (solo imagenes y videos)
 const fileFilter = (req, file, cb) => {
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'video/mp4', 'video/quicktime'];
-
-    if(allowedTypes.includes(file.mimetype)){
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    if (allowedTypes.includes(file.mimetype)) {
         cb(null, true);
-    }else{
-        cb(new Error('Formato no permitido. Solo (jpg, png, webp, mp4'), false);
+    } else {
+        cb(new Error('Formato no permitido. Solo jpg, png, webp'), false);
     }
 };
 
-//Middleware
 const upload = multer({
-    storage: storage,
-    limits: {
-        fileSize: 50 * 1024 * 1024, //limite de 50mb
-    },
-    fileFilter: fileFilter
+    storage,
+    limits: { fileSize: 20 * 1024 * 1024 },
+    fileFilter
 });
 
 module.exports = upload;
