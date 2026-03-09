@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import api from '../../../services/api';
+import api from '../../services/api';
 import './flashBookingModal.css';
 
 const FlashBookingModal = ({flash, onClose}) => {
