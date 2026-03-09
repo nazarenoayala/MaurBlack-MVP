@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios';
-import './FlashBookingModal.css';
+import './flashBookingModal.css';
 
 const FlashBookingModal = ({flash, onClose}) => {
     const [formFlash, setFormFlash] = useState({
