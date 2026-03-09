@@ -65,10 +65,14 @@ const createCustomBooking = async (req, res) =>{
             `
         };
 
-        await Promise.all([ //envio los dos correos en simultaneo con promise all
+        try {
+            await Promise.all([
             mailer.sendMail(adminMailOptions),
             mailer.sendMail(clientMailOptions)
-        ])
+        ]);
+        } catch (emailError) {
+            console.error("Email failed but booking saved:", emailError);
+        }
         res.status(200).json({success: true, message: 'Custom booking sent!'})
 
     } catch (error) {
@@ -132,10 +136,14 @@ const createFlashBooking = async (req, res) =>{
             `
         };
 
-        await Promise.all([
+        try {
+            await Promise.all([
             mailer.sendMail(adminMailOptions),
             mailer.sendMail(clientMailOptions)
         ]);
+        } catch (emailError) {
+            console.error("Email failed but booking saved:", emailError);
+        }
         res.status(200).json({success: true, message: "Flash booking sent!"});
     } catch (error) {
         console.error("Error flash booking", error);
