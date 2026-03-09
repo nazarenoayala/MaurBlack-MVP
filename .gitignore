@@ -3,3 +3,5 @@ node_modules/
 .DS_store
 Thumbs.db
 npm-debug.log
+.vercel
+.env*.local
