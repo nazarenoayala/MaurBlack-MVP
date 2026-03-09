@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import FlashBookingModal from '../../../components/FlashBookingModal/FlashBookingModal';
 import Loader from '../../../components/Loader/Loader';
+import api from '../../../services/api';
 import './flashSelection.css';
 
 const FlashSelection = () =>{
@@ -13,7 +13,7 @@ const FlashSelection = () =>{
     useEffect(() =>{
         const fetchFlashes = async () => {
         try {
-            const res = await axios.get('http://localhost:4000/api/flashes');
+            const res = await api.get('/flashes');
             setFlashes(res.data);
         } catch (error) {
             console.error("ERROR EN PETICIÓN:", error);

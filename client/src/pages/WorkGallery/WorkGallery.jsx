@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import api from '../../services/api';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import './workGallery.css';
@@ -16,7 +16,7 @@ const WorkGallery = () => {
         const fetchImages = async () =>{
             try {
                 //LLamo al endpoint filtrado por tipo
-                const res = await axios.get(`http://localhost:4000/api/works/type/${type}`);
+                const res = await api.get(`/works/type/${type}`);
                 setImages(res.data);
                 setLoading(false);
             } catch (error) {

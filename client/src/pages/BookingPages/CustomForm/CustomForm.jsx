@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MyButton from '../../../components/MyButton/MyButton';
-import axios from 'axios';
+import api from '../../../services/api';
 import { useNavigate } from 'react-router-dom';
 import './customForm.css';
 
@@ -44,7 +44,7 @@ const CustomForm = () => {
     if (file) data.append('reference_img', file);
 
     try {
-        await axios.post('http://localhost:4000/api/booking/custom', data,{
+        await api.post('/booking/custom', data,{
             headers: {'Content-Type': 'multipart/form-data'}
         });
         setShowModal(true);

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import axios from 'axios';
+import api from '../../../services/api';
 import './flashBookingModal.css';
 
 const FlashBookingModal = ({flash, onClose}) => {
@@ -31,7 +31,7 @@ const FlashBookingModal = ({flash, onClose}) => {
         };
 
         try {
-            await axios.post('http://localhost:4000/api/booking/flash', bookingData);
+            await api.post('/booking/flash', bookingData);
             setSuccess(true);
             setTimeout(() => {
             onClose();//cierro modal si se envia con exito, luego de 3 segundos.
