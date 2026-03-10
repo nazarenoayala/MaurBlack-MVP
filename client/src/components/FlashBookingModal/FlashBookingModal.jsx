@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import api from '../../services/api';
+import { useNavigate } from 'react-router-dom';
 import './flashBookingModal.css';
 
 const FlashBookingModal = ({flash, onClose}) => {
+    const navigate = useNavigate();
     const [formFlash, setFormFlash] = useState({
         name: '',
         email: '',
@@ -34,6 +36,7 @@ const FlashBookingModal = ({flash, onClose}) => {
             await api.post('/booking/flash', bookingData);
             setSuccess(true);
             setTimeout(() => {
+            navigate('/');
             onClose();//cierro modal si se envia con exito, luego de 3 segundos.
             }, 3000);
         } catch (error) {
