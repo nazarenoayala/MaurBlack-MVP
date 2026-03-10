@@ -22,7 +22,7 @@
     font-family: var(--font-title);
     font-size: 0.7rem;
     letter-spacing: 5px;
-    color: #f0a500;
+    color: #dd4725;
 }
 
 .events-title {
@@ -84,7 +84,7 @@
     font-size: 1.2rem;
     letter-spacing: 3px;
     margin-bottom: 5px;
-    color: #f0a500;
+    color: #dd4725;
 }
 
 .event-location {

@@ -19,7 +19,7 @@
 
 .flash-card:hover {
     transform: translateY(-10px);
-    border-color: #f0a500;
+    border-color: #dd4725;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 

@@ -39,7 +39,7 @@
 }
 
 .booking-card:hover {
-    border-color: #f0a500;
+    border-color: #dd4725;
     background-color: #111;
 }
 
@@ -51,7 +51,7 @@
 
 .card-content h3 {
     font-family: var(--font-title);
-    color: #f0a500;
+    color: #dd4725;
     font-size: 1.4rem;
     letter-spacing: 3px;
     margin: 0;
@@ -73,7 +73,7 @@
 }
 
 .booking-card:hover .card-arrow {
-    color: #f0a500;
+    color: #dd4725;
     transform: translateX(6px);
 }
 

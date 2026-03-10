@@ -19,7 +19,7 @@
 }
 
 .custom-tattoo-form h2 {
-  color: #f0a500;
+  color: #dd4725;
   letter-spacing: 3px;
   text-align: center;
 }
@@ -52,7 +52,7 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border-color: #f0a500;
+  border-color: #dd4725;
 }
 
 .file-input-wrapper {
@@ -63,7 +63,7 @@ input:focus, textarea:focus {
 }
 
 .file-input label {
-  color: #f0a500;
+  color: #dd4725;
   cursor: pointer;
   font-size: 0.8rem;
   letter-spacing: 1px;
@@ -74,7 +74,7 @@ input:focus, textarea:focus {
 }
 
 .submit-btn {
-  background: #f0a500;
+  background: #dd4725;
   color: #000;
   padding: 15px;
   border: none;
