@@ -20,11 +20,9 @@ const login = async (req, res) => {
         }
 
         const user = rows[0];
-        console.log('DB password:', user.password);
-
         //comparo password con hashed en la DB
         const validPassword = await compareString(password, user.password);
-        console.log('Valid:', validPassword);
+
         if(!validPassword) {
             return res.status(401).json({message:'Invalid credentials'});
         }
