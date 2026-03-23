@@ -25,10 +25,12 @@
 
 .flash-img {
     width: 100%;
-    height: 350px;
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: contain;
+    background-color: #111;
     filter: grayscale(20%);
-    transition: filter 0.3s
+    transition: filter 0.3s;
 }
 
 .flash-card:hover .flash-img {
