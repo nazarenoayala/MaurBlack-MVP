@@ -7,7 +7,7 @@ const About = () => {
     <section className='about-container'>
       <div className='about-img'>
         <img 
-          src="/maurblackprofile.jpeg" 
+          src="/assets/maurblackprofile.jpeg" 
           alt="Maur Black - Tattoo Artist Barcelona" 
           className="profile-photo"
         />
