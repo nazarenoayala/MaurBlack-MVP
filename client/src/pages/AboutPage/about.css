@@ -138,3 +138,14 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+@media (max-width: 768px) {
+    .about-page {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        margin-top: 0;
+        padding: 100px 24px 60px;
+        overflow-y: auto;
+    }
+}

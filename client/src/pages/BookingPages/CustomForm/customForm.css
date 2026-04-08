@@ -157,3 +157,18 @@ input:focus, textarea:focus {
   from { opacity: 0; transform: translateY(30px) scale(0.95); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 100px 16px 40px;
+        align-items: flex-start;
+    }
+
+    .custom-tattoo-form {
+        padding: 24px 16px;
+    }
+
+    .input-section {
+        grid-template-columns: 1fr;
+    }
+}
