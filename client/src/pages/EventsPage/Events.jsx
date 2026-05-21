@@ -67,8 +67,19 @@ const Events = () => {
                                     <p className='event-location'>{event.location}</p>
                                 )}
                                 {event.description && (
-                                    <p className='event-description'>{event.description}</p>
-                                )}
+                                    event.description.startsWith('http') ? (
+                                <a 
+                                    href={event.description} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className='event-link'
+                                    >
+                                    VISIT WEBSITE →
+                                </a>
+                                ) : (
+                                <p className='event-description'>{event.description}</p>
+                                )
+                        )}
                             </div>
                         </div>
                     ))

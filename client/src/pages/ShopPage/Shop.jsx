@@ -17,7 +17,7 @@ const Shop = () => {
     },
     {
       id: 3,
-      name: "MERCHANDSING",
+      name: "MERCH",
       image: "https://res.cloudinary.com/ddzvaugox/image/upload/v1772262314/IMG_5834_arex0r.jpg",
       url: "https://maurblack.bigcartel.com/products"
     }
