@@ -6,13 +6,13 @@ const Shop = () => {
     {
       id: 1,
       name: "BOOKS",
-      image: "https://res.cloudinary.com/ddzvaugox/image/upload/v1772262314/PIN---7_bzms5w.jpg",
+      image: "https://res.cloudinary.com/ddzvaugox/image/upload/v1779399342/image0_2_lculvi.jpg",
       url: "https://maurblack.bigcartel.com/category/books"
     },
     {
       id: 2,
       name: "PRINTS",
-      image: "https://res.cloudinary.com/ddzvaugox/image/upload/v1772262313/DSC08802_pqhmvr.jpg",
+      image: "https://res.cloudinary.com/ddzvaugox/image/upload/v1779399339/image0_1_armdlt.jpg",
       url: "https://maurblack.bigcartel.com/category/prints"
     },
     {
