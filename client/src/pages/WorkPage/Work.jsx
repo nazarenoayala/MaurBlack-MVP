@@ -25,7 +25,7 @@ const Work = () => {
               onClick={() => navigate('/work/gallery/2')}
           >
               <div className='category-cover'>
-                <h2>PAINTS</h2>
+                <h2>PAINTINGS</h2>
                 <span className='gallery-btn'>VIEW GALLERY</span>
 
               </div>

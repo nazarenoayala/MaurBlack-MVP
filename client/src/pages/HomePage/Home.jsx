@@ -33,13 +33,13 @@ const Home = () => {
         <div className='video-cover'></div>
       </div>
       <div className="home-content">
-        <span className="home-subtitle">TATTOO & PAINT ARTIST</span>
+        <span className="home-subtitle">TATTOOER & PAINTER</span>
         <h1 className="home-title">MAURBLACK</h1>
         <div className="home-divider"></div>
         <button 
           className="home-cta"
           onClick={() => navigate('/work')}
-          >EXPLORE GALLERY
+          >EXPLORE GALLERY 
           </button>
       </div>
       
